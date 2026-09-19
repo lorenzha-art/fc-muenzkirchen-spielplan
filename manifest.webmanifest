@@ -1,0 +1,24 @@
+{
+  "name": "FC Münzkirchen Spielplan",
+  "short_name": "FCM Spielplan",
+  "description": "Aktueller Spielplan des FC Münzkirchen",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f3f6fa",
+  "theme_color": "#123e7a",
+  "icons": [
+    {
+      "src": "assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
