@@ -2,6 +2,7 @@
   command = "node inject_mobile_fix.mjs"
   publish = "."
 
+# Responsive mobile layout revision 6.
 [[headers]]
   for = "/*"
   [headers.values]
