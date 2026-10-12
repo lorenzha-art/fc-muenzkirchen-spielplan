@@ -4,7 +4,7 @@
   main.fcm-calendar { width: 100%; padding: 0 8px; margin: 0 auto 28px; }
   .fcm-calendar .match, .fcm-calendar .match > * { min-width: 0; }
   .fcm-calendar .match {
-    grid-template-columns: minmax(0, 1fr) auto auto;
+    grid-template-columns: minmax(0, 1fr) max-content max-content;
     grid-template-areas:
       "when badge result"
       "home home home"
@@ -14,11 +14,11 @@
     padding: 11px;
   }
   .fcm-calendar .match .when { grid-area: when; }
-  .fcm-calendar .match .badge { grid-area: badge; }
+  .fcm-calendar .match .badge { grid-area: badge; justify-self: end; width: max-content; min-width: 38px; }
   .fcm-calendar .match > .side:nth-child(3) { grid-area: home; }
   .fcm-calendar .match > .versus { grid-area: versus; }
   .fcm-calendar .match > .side:nth-child(5) { grid-area: away; }
-  .fcm-calendar .match .result { grid-area: result; }
+  .fcm-calendar .match .result { grid-area: result; justify-self: end; width: max-content; min-width: 42px; }
   .fcm-calendar .match .comp {
     grid-area: comp;
     display: block;
