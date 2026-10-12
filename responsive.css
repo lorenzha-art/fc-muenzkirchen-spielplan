@@ -1,6 +1,6 @@
 /* Mobile layout fix loaded after the embedded calendar styles. */
 @media (max-width: 700px) {
-  html, body { max-width: 100%; overflow-x: hidden; }
+  html, body { max-width: 100%; overflow-x: clip; }
   #nl-badge-frame { display: none !important; }
   main.fcm-calendar { width: 100%; padding: 0 8px; margin: 0 auto 28px; }
   .fcm-calendar .match, .fcm-calendar .match > * { min-width: 0; }
@@ -22,11 +22,11 @@
   .fcm-calendar .match .side {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: flex-start;
     gap: 6px;
     min-width: 0;
-    text-align: center;
+    text-align: left;
   }
   .fcm-calendar .match .side img { width: 34px; height: 34px; flex: 0 0 34px; }
   .fcm-calendar .match .side > span { font-size: 11px; line-height: 1.25; overflow-wrap: anywhere; }
