@@ -5,16 +5,16 @@
   main.fcm-calendar { width: 100%; padding: 0 8px; margin: 0 auto 28px; }
   .fcm-calendar .match, .fcm-calendar .match > * { min-width: 0; }
   .fcm-calendar .match {
-    grid-template-columns: minmax(0, 1fr) 34px minmax(0, 1fr);
+    grid-template-columns: max-content minmax(0, 1fr) max-content;
     grid-template-areas:
-      "when badge result"
+      "badge when result"
       "home versus away"
       "comp comp comp";
     gap: 10px 8px;
     padding: 12px 10px;
   }
-  .fcm-calendar .match .when { grid-area: when; align-self: center; }
-  .fcm-calendar .match .badge { grid-area: badge; justify-self: center; width: max-content; min-width: 34px; }
+  .fcm-calendar .match .when { grid-area: when; align-self: center; justify-self: start; }
+  .fcm-calendar .match .badge { grid-area: badge; justify-self: start; width: max-content; min-width: 42px; }
   .fcm-calendar .match > .side:nth-child(3) { grid-area: home; }
   .fcm-calendar .match > .versus { grid-area: versus; align-self: center; justify-self: center; }
   .fcm-calendar .match > .side:nth-child(5) { grid-area: away; }
@@ -22,11 +22,11 @@
   .fcm-calendar .match .side {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
     gap: 6px;
     min-width: 0;
-    text-align: left;
+    text-align: center;
   }
   .fcm-calendar .match .side img { width: 34px; height: 34px; flex: 0 0 34px; }
   .fcm-calendar .match .side > span { font-size: 11px; line-height: 1.25; overflow-wrap: anywhere; }
