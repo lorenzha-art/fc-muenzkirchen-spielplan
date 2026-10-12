@@ -1,9 +1,10 @@
-/* Mobile layout fix loaded after the embedded calendar styles. */
+/* Emergency-safe responsive layer loaded by Netlify after the embedded styles. */
 @media (max-width: 700px) {
   html, body { max-width: 100%; overflow-x: clip; }
   #nl-badge-frame { display: none !important; }
   main.fcm-calendar { width: 100%; padding: 0 8px; margin: 0 auto 28px; }
-  .fcm-calendar .match, .fcm-calendar .match > * { min-width: 0; }
+  .fcm-calendar .match,
+  .fcm-calendar .match > * { min-width: 0; }
   .fcm-calendar .match {
     grid-template-columns: 72px minmax(0, 1fr) 34px;
     grid-template-areas:
@@ -13,7 +14,17 @@
     gap: 10px 8px;
     padding: 12px 10px;
   }
-  .fcm-calendar .match .when { grid-area: when; align-self: center; justify-self: start; }
+  .fcm-calendar .match .when {
+    grid-area: when;
+    display: grid;
+    grid-template-columns: 68px 52px;
+    gap: 6px;
+    align-items: baseline;
+    align-self: center;
+    justify-self: start;
+  }
+  .fcm-calendar .match .when strong,
+  .fcm-calendar .match .when > span { min-width: 0; }
   .fcm-calendar .match .badge { grid-area: badge; justify-self: stretch; width: 72px; min-width: 0; }
   .fcm-calendar .match > .side:nth-child(3) { grid-area: home; }
   .fcm-calendar .match > .versus { grid-area: versus; align-self: center; justify-self: center; }
