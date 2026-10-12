@@ -13,16 +13,14 @@
     gap: 8px;
     padding: 11px;
   }
-  .fcm-calendar .match .when { grid-area: when; grid-column: auto; }
-  .fcm-calendar .match .badge { grid-area: badge; grid-column: auto; grid-row: auto; }
+  .fcm-calendar .match .when { grid-area: when; }
+  .fcm-calendar .match .badge { grid-area: badge; }
   .fcm-calendar .match > .side:nth-child(3) { grid-area: home; }
-  .fcm-calendar .match > .versus { grid-area: versus; grid-column: auto; grid-row: auto; }
+  .fcm-calendar .match > .versus { grid-area: versus; }
   .fcm-calendar .match > .side:nth-child(5) { grid-area: away; }
-  .fcm-calendar .match .result { grid-area: result; grid-column: auto; }
+  .fcm-calendar .match .result { grid-area: result; }
   .fcm-calendar .match .comp {
     grid-area: comp;
-    grid-column: auto;
-    grid-row: auto;
     display: block;
     width: auto;
     min-width: 0;
