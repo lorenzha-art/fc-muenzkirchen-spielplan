@@ -43,7 +43,10 @@
   .fcm-calendar .match .side > span { font-size: 11px; line-height: 1.25; overflow-wrap: anywhere; }
   .fcm-calendar .match .comp {
     grid-area: comp;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 16px;
+    align-items: baseline;
     width: auto;
     min-width: 0;
     margin: 0;
@@ -55,4 +58,95 @@
     overflow-wrap: anywhere;
   }
   .fcm-calendar .match .venue { display: block; margin-top: 3px; font-size: 11px; line-height: 1.3; }
+}
+
+/* Hochkant-Bildschirm am Sportplatz: zweizeilige Karten statt gequetschter Desktop-Tabelle. */
+@media (min-width: 701px) and (max-width: 1199px) and (orientation: portrait) {
+  html, body { max-width: 100%; overflow-x: clip; }
+  #nl-badge-frame { display: none !important; }
+  main.fcm-calendar { width: 94%; max-width: 1120px; margin: 0 auto 50px; }
+  .sticky-nav .hero {
+    grid-template-columns: 82px minmax(0, 1fr) 105px;
+    gap: 18px;
+    padding: 22px 4px 18px;
+  }
+  .club-logo { width: 76px; height: 64px; }
+  .hero h1 { font-size: clamp(34px, 4.8vw, 52px); }
+  .hero .sub { font-size: 15px; }
+  .sticky-nav .toolbar { gap: 7px; padding: 13px 0 7px; }
+  .toolbar button { min-width: 58px; padding: 10px 14px; font-size: 14px; }
+  .fcm-calendar .match,
+  .fcm-calendar .match > * { min-width: 0; }
+  .fcm-calendar .match {
+    grid-template-columns: 112px 78px minmax(0, 1fr) 92px;
+    grid-template-areas:
+      "when badge home result"
+      "when versus away result"
+      "comp comp comp comp";
+    gap: 10px 15px;
+    min-height: 138px;
+    padding: 18px 20px 16px;
+  }
+  .fcm-calendar .match .when {
+    grid-area: when;
+    display: grid;
+    align-self: center;
+    gap: 7px;
+  }
+  .fcm-calendar .match .when strong { font-size: 15px; white-space: nowrap; }
+  .fcm-calendar .match .when > span { font-size: 25px; }
+  .fcm-calendar .match .badge {
+    grid-area: badge;
+    align-self: center;
+    padding: 9px 7px;
+    font-size: 15px;
+  }
+  .fcm-calendar .match > .side:nth-child(3) { grid-area: home; }
+  .fcm-calendar .match > .versus {
+    grid-area: versus;
+    align-self: center;
+    justify-self: center;
+    width: 38px;
+    min-height: 34px;
+    padding: 8px 4px;
+    background: #f0f3f8;
+    font-size: 14px;
+  }
+  .fcm-calendar .match > .side:nth-child(5) { grid-area: away; }
+  .fcm-calendar .match .side { gap: 13px; }
+  .fcm-calendar .match .side img { width: 42px; height: 42px; flex: 0 0 42px; }
+  .fcm-calendar .match .side > span {
+    font-size: 18px;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+  }
+  .fcm-calendar .match .result {
+    grid-area: result;
+    align-self: center;
+    font-size: 27px;
+    white-space: nowrap;
+  }
+  .fcm-calendar .match .comp {
+    grid-area: comp;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 16px;
+    align-items: baseline;
+    width: auto;
+    margin: 2px 0 0 205px;
+    padding: 10px 0 0;
+    border-top: 1px solid #dce3ed;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow-wrap: normal;
+  }
+  .fcm-calendar .match .venue {
+    display: inline;
+    margin: 0;
+    font-size: 15px;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+  .week, .match { scroll-margin-top: 175px; }
 }
