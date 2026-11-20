@@ -6,41 +6,42 @@
   .fcm-calendar .match,
   .fcm-calendar .match > * { min-width: 0; }
   .fcm-calendar .match {
-    grid-template-columns: 72px minmax(0, 1fr) 34px;
+    grid-template-columns: 66px minmax(0, 1fr) auto;
     grid-template-areas:
       "badge when result"
-      "home versus away"
+      "home home home"
+      "versus away away"
       "comp comp comp";
-    gap: 10px 8px;
-    padding: 12px 10px;
+    gap: 8px 10px;
+    padding: 12px;
   }
   .fcm-calendar .match .when {
     grid-area: when;
     display: grid;
-    grid-template-columns: 68px 52px;
-    gap: 6px;
+    grid-template-columns: auto auto;
+    gap: 8px;
     align-items: baseline;
     align-self: center;
     justify-self: start;
   }
   .fcm-calendar .match .when strong,
   .fcm-calendar .match .when > span { min-width: 0; }
-  .fcm-calendar .match .badge { grid-area: badge; justify-self: stretch; width: 72px; min-width: 0; }
+  .fcm-calendar .match .badge { grid-area: badge; justify-self: stretch; width: 66px; min-width: 0; }
   .fcm-calendar .match > .side:nth-child(3) { grid-area: home; }
-  .fcm-calendar .match > .versus { grid-area: versus; align-self: center; justify-self: center; }
+  .fcm-calendar .match > .versus { grid-area: versus; align-self: center; justify-self: center; width: 32px; min-height: 32px; padding: 8px 2px; }
   .fcm-calendar .match > .side:nth-child(5) { grid-area: away; }
   .fcm-calendar .match .result { grid-area: result; align-self: center; justify-self: end; width: 34px; min-width: 34px; }
   .fcm-calendar .match .side {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
     align-items: center;
-    justify-content: flex-start;
-    gap: 6px;
+    justify-content: stretch;
+    gap: 9px;
     min-width: 0;
-    text-align: center;
+    text-align: left;
   }
-  .fcm-calendar .match .side img { width: 34px; height: 34px; flex: 0 0 34px; }
-  .fcm-calendar .match .side > span { font-size: 11px; line-height: 1.25; overflow-wrap: anywhere; }
+  .fcm-calendar .match .side img { width: 36px; height: 36px; }
+  .fcm-calendar .match .side > span { font-size: 14px; line-height: 1.25; overflow-wrap: normal; word-break: normal; hyphens: none; }
   .fcm-calendar .match .comp {
     grid-area: comp;
     display: flex;
@@ -52,12 +53,15 @@
     margin: 0;
     padding: 8px 0 0;
     border-top: 1px solid #e2e7ef;
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.3;
-    text-align: center;
-    overflow-wrap: anywhere;
+    text-align: left;
+    overflow-wrap: normal;
   }
-  .fcm-calendar .match .venue { display: block; margin-top: 3px; font-size: 11px; line-height: 1.3; }
+  .fcm-calendar .match .venue { display: block; margin-top: 3px; font-size: 12px; line-height: 1.3; overflow-wrap: normal; word-break: normal; }
+  .fcm-calendar .week-title { padding: 11px 12px; }
+  .fcm-calendar .week-title h2 { font-size: 15px; }
+  .fcm-calendar .week-title span { font-size: 11px; }
 }
 
 /* Hochkant-Bildschirm am Sportplatz: zweizeilige Karten statt gequetschter Desktop-Tabelle. */
