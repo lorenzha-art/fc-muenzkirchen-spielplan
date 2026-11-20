@@ -7,3 +7,9 @@ window.scheduleTodayJump = function scheduleTodayJump() {
   window.__todayJumpTimer = setTimeout(window.jumpToToday, 180);
 };
 window.scheduleTodayJump();
+window.addEventListener("pageshow", window.scheduleTodayJump);
+document.addEventListener("visibilitychange", function () {
+  if (!document.hidden) window.scheduleTodayJump();
+});
+setTimeout(window.scheduleTodayJump, 450);
+setTimeout(window.scheduleTodayJump, 1200);
